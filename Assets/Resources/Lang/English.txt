@@ -1,0 +1,3 @@
+[Main Menu]
+Start = Start
+ReportBug = Report a Bug
