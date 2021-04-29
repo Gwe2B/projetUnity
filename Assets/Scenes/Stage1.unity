@@ -781,11 +781,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 506241071629024345, guid: c327b55e5d36f0744a2bc17790d0be27, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.15
+      value: -6.98
       objectReference: {fileID: 0}
     - target: {fileID: 506241071629024345, guid: c327b55e5d36f0744a2bc17790d0be27, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.83
+      value: -2.63
       objectReference: {fileID: 0}
     - target: {fileID: 506241071629024345, guid: c327b55e5d36f0744a2bc17790d0be27, type: 3}
       propertyPath: m_LocalPosition.z
@@ -819,6 +819,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 506241071629024346, guid: c327b55e5d36f0744a2bc17790d0be27, type: 3}
+      propertyPath: m_Size.x
+      value: 4.4084105
+      objectReference: {fileID: 0}
+    - target: {fileID: 506241071629024346, guid: c327b55e5d36f0744a2bc17790d0be27, type: 3}
+      propertyPath: m_Size.y
+      value: 3.1564937
+      objectReference: {fileID: 0}
+    - target: {fileID: 506241071629024346, guid: c327b55e5d36f0744a2bc17790d0be27, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.42228866
+      objectReference: {fileID: 0}
+    - target: {fileID: 506241071629024346, guid: c327b55e5d36f0744a2bc17790d0be27, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.060129404
+      objectReference: {fileID: 0}
     - target: {fileID: 506241071629024347, guid: c327b55e5d36f0744a2bc17790d0be27, type: 3}
       propertyPath: m_Size.x
       value: 7
@@ -834,6 +850,14 @@ PrefabInstance:
     - target: {fileID: 506241071629024347, guid: c327b55e5d36f0744a2bc17790d0be27, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 506241071629024348, guid: c327b55e5d36f0744a2bc17790d0be27, type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 506241071629024349, guid: c327b55e5d36f0744a2bc17790d0be27, type: 3}
+      propertyPath: speed.y
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c327b55e5d36f0744a2bc17790d0be27, type: 3}
