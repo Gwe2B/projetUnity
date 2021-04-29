@@ -6,10 +6,11 @@ using UnityEngine;
 
 public sealed class Translation : MonoBehaviour {
     public static readonly SystemLanguage[] LANGUAGES = {
-        SystemLanguage.English, SystemLanguage.French
+        SystemLanguage.English, SystemLanguage.French, SystemLanguage.Japanese
     };
 
     private static Dictionary<string, string> trad = null;
+    private static SystemLanguage lang;
 
 #if UNITY_EDITOR
     private static bool d_OverrideLanguage = false;
@@ -21,19 +22,19 @@ public sealed class Translation : MonoBehaviour {
         if(trad != null) { return; }
 
         trad = new Dictionary<string, string>();
-        var lang = Application.systemLanguage;
+        var langBuf = Application.systemLanguage;
 
 #if UNITY_EDITOR
         // Override the current language for testing purpose.
-        if (d_OverrideLanguage) { lang = d_Language; }
+        if (d_OverrideLanguage) { langBuf = d_Language; }
 #endif
         // Check if the current language is supported.
         // Otherwise use the first language as default.
-        if (Array.IndexOf<SystemLanguage>(LANGUAGES, lang) == -1)
+        if (Array.IndexOf<SystemLanguage>(LANGUAGES, langBuf) == -1)
         { lang = LANGUAGES[0]; }
 
         // Load and parse the translation file from the Resources folder.
-        var data = Resources.Load<TextAsset>($"Lang/{lang}");
+        var data = Resources.Load<TextAsset>($"Lang/{langBuf}");
         if (data != null) { ParseFile(data.text); }
     }
 
@@ -78,4 +79,8 @@ public sealed class Translation : MonoBehaviour {
             }
         }
     }
+
+    //public static void setLanguage() {}
+
+    public static SystemLanguage GetLanguage() { return lang; }
 }
