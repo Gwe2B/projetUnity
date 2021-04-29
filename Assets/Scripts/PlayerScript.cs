@@ -24,15 +24,13 @@ public class PlayerScript : MonoBehaviour {
     void Update() {
         float inputX = Input.GetAxis("Horizontal");
 
-        if (Input.GetButtonDown("Jump")) {
+        if (Input.GetButtonDown("Jump") && rigidbodyComponent.velocity.y == 0) {
             rigidbodyComponent.velocity = Vector2.up * jumpVelocity;
         } else if (rigidbodyComponent.velocity.y > 0 && !Input.GetButton("Jump")) {
             rigidbodyComponent.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         } if(rigidbodyComponent.velocity.y < 0) {
             rigidbodyComponent.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
         }
-
-        Debug.Log($"{speed.x} * {inputX} = {speed.x * inputX}");
 
         movement = new Vector2(
             speed.x * inputX,
