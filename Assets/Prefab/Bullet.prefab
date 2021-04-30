@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 6484753286467073082}
   - component: {fileID: 558912352913554795}
   - component: {fileID: 1030694106}
+  - component: {fileID: 769915146}
+  - component: {fileID: 8725562856729958613}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -146,3 +148,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: {x: 10, y: 10}
   direction: {x: 1, y: 0}
+--- !u!114 &769915146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3721523230868162730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0566604f5850e488dcacfea0c53efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  isEnemyShot: 0
+--- !u!114 &8725562856729958613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3721523230868162730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f6efdca5d95ada4b978e60796ad7c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotPrefab: {fileID: 0}
+  shootingRate: 0.25
