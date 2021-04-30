@@ -1,3 +1,7 @@
 [Main Menu]
 Start = Start
 ReportBug = Report a Bug
+
+[Pause]
+Resume = Resume Game
+BackMenu = Main Menu

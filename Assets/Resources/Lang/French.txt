@@ -1,3 +1,7 @@
 [Main Menu]
 Start = Jouer
 ReportBug = Reporter un bug
+
+[Pause]
+Resume = Retour au Jeu
+BackMenu = Menu Principal

@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a7f8de392bd4f443965e28766513e0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 4
+  maxHp: 1
   isEnemy: 1
   hb: {fileID: 0}
 --- !u!114 &140413482758309009
@@ -175,3 +175,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e609dcd60471748a27989004c9988a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 1

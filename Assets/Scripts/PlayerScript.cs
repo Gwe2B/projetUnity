@@ -37,6 +37,14 @@ public class PlayerScript : MonoBehaviour
             rigidbodyComponent.velocity.y
         );
 
+        bool shoot = Input.GetButtonDown("Fire1");
+        shoot |= Input.GetButtonDown("Fire2");
+
+        if(shoot) {
+            WeaponScript weapon = GetComponent<WeaponScript>();
+            if(weapon != null) { weapon.Attack(false); }
+        }
+
         var dist = (transform.position - Camera.main.transform.position).z;
         var leftBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, dist)).x;
         var rightBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, dist)).x;

@@ -23,7 +23,7 @@ public class HealthScript : MonoBehaviour {
         if(shot != null) {
             if(shot.isEnemyShot != isEnemy) {
                 hp -= shot.damage;
-                hb.SetHealth(hp);
+                if (hb != null) { hb.SetHealth(hp); }
                 Destroy(shot.gameObject);
 
                 if(hp <= 0) {
@@ -33,7 +33,7 @@ public class HealthScript : MonoBehaviour {
         } else if(enemy != null) {
             if (!isEnemy) {
                 hp -= enemy.damage;
-                hb.SetHealth(hp);
+                if (hb != null) { hb.SetHealth(hp); }
                 Destroy(enemy.gameObject);
 
                 if (hp <= 0)
