@@ -18,6 +18,7 @@ public class HealthScript : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision) {
         ShotScript shot = collision.gameObject.GetComponent<ShotScript>();
+        EnemyScript enemy = collision.gameObject.GetComponent<EnemyScript>();
 
         if(shot != null) {
             if(shot.isEnemyShot != isEnemy) {
@@ -26,6 +27,17 @@ public class HealthScript : MonoBehaviour {
                 Destroy(shot.gameObject);
 
                 if(hp <= 0) {
+                    Destroy(gameObject);
+                }
+            }
+        } else if(enemy != null) {
+            if (!isEnemy) {
+                hp -= enemy.damage;
+                hb.SetHealth(hp);
+                Destroy(enemy.gameObject);
+
+                if (hp <= 0)
+                {
                     Destroy(gameObject);
                 }
             }
