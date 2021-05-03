@@ -21,7 +21,7 @@ public class HealthScript : MonoBehaviour {
         EnemyScript enemy = collision.gameObject.GetComponent<EnemyScript>();
 
         if(shot != null) {
-            if(shot.isEnemyShot != isEnemy) {
+            if(isEnemy) {
                 hp -= shot.damage;
                 if (hb != null) { hb.SetHealth(hp); }
                 Destroy(shot.gameObject);
@@ -36,9 +36,9 @@ public class HealthScript : MonoBehaviour {
                 if (hb != null) { hb.SetHealth(hp); }
                 Destroy(enemy.gameObject);
 
-                if (hp <= 0)
-                {
+                if (hp <= 0) {
                     Destroy(gameObject);
+                    FindObjectOfType<GameManager>().EndGame();
                 }
             }
         }

@@ -62,4 +62,8 @@ public class PlayerScript : MonoBehaviour
     {
         rigidbodyComponent.velocity = movement;
     }
+
+    void OnDestroy() {
+        transform.parent.gameObject.AddComponent<GameOverScript>();
+    }
 }
