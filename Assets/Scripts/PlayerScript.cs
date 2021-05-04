@@ -66,4 +66,23 @@ public class PlayerScript : MonoBehaviour
     void OnDestroy() {
         transform.parent.gameObject.AddComponent<GameOverScript>();
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Zombie")
+        {
+            EnemyScript enemy = collision.gameObject.GetComponent<EnemyScript>();
+            HealthScript myHp = GetComponent<HealthScript>();
+
+            myHp.SetHp(myHp.GetHp() - enemy.damage);
+            if (myHp.hb != null) { myHp.hb.SetHealth(myHp.GetHp()); }
+            Destroy(enemy.gameObject);
+
+            if (myHp.GetHp() <= 0)
+            {
+                Destroy(gameObject);
+                FindObjectOfType<GameManager>().EndGame();
+            }
+        }
+    }
 }
