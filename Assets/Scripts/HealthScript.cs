@@ -16,35 +16,21 @@ public class HealthScript : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision) {
         ShotScript shot = collision.gameObject.GetComponent<ShotScript>();
-        //EnemyScript enemy = collision.gameObject.GetComponent<EnemyScript>();
 
-        if(shot != null) {
-            if(isEnemy) {
-                hp -= shot.damage;
-                if (hb != null) { hb.SetHealth(hp); }
-                Destroy(shot.gameObject);
+        if(shot != null && isEnemy && (collision.gameObject.tag == "Bullet")) {
+            hp -= shot.damage;
+            if (hb != null) { hb.SetHealth(hp); }
+            Destroy(shot.gameObject);
 
-                if(hp <= 0) {
-                    Destroy(gameObject);
-                }
+            if(hp <= 0) {
+                Destroy(gameObject);
             }
-        }/* else if(enemy != null) {
-            if (!isEnemy) {
-                hp -= enemy.damage;
-                if (hb != null) { hb.SetHealth(hp); }
-                Destroy(enemy.gameObject);
-
-                if (hp <= 0) {
-                    Destroy(gameObject);
-                    FindObjectOfType<GameManager>().EndGame();
-                }
-            }
-        }*/
+        }
     }
 
     public void SetHp(int newhp)
     {
-        if (newhp < maxHp) { hp = newhp; }
+        if (newhp <= maxHp) { hp = newhp; }
     }
 
     public int GetHp() { return hp; }

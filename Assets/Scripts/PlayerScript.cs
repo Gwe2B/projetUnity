@@ -88,4 +88,17 @@ public class PlayerScript : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Bonus")
+        {
+            BonusScript bonus = collision.gameObject.GetComponent<BonusScript>();
+            HealthScript myHp = GetComponent<HealthScript>();
+
+            myHp.SetHp(myHp.GetHp() + bonus.hpBonus);
+            if (myHp.hb != null) { myHp.hb.SetHealth(myHp.GetHp()); }
+            Destroy(bonus.gameObject);
+        }
+    }
 }
