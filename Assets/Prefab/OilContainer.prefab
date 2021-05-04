@@ -10,8 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4533049659934662450}
   - component: {fileID: 3418574113708216264}
+  - component: {fileID: 243863446}
+  - component: {fileID: 243863445}
   m_Layer: 0
-  m_Name: obstacle 2
+  m_Name: OilContainer
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5899401774315631207}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 13.37, y: -3.28, z: -1}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
@@ -82,3 +84,91 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &243863446
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5899401774315631207}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!60 &243863445
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5899401774315631207}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.87, y: -0.19}
+      - {x: 0.87, y: -0.03}
+      - {x: 0.85999995, y: 0.06}
+      - {x: 0.77, y: 0.17999999}
+      - {x: 0.7, y: 0.22}
+      - {x: 0.64, y: 0.25}
+      - {x: 0.47, y: 0.24}
+      - {x: 0.26999998, y: 0.17}
+      - {x: 0.099999994, y: 0.13}
+      - {x: -0.04, y: 0.089999996}
+      - {x: -0.04, y: 0.61}
+      - {x: -0.07, y: 0.65999997}
+      - {x: -0.11, y: 0.66999996}
+      - {x: -0.55, y: 0.66999996}
+      - {x: -0.61, y: 0.56}
+      - {x: -0.78999996, y: 0.52}
+      - {x: -0.84, y: 0.47}
+      - {x: -0.84, y: 0.17}
+      - {x: -0.82, y: 0.16}
+      - {x: -0.84, y: -0.12}
+      - {x: -0.84, y: -0.22}
+      - {x: -0.83, y: -0.42999998}
+      - {x: -0.71, y: -0.51}
+      - {x: -0.26999998, y: -0.5}
+      - {x: -0.24, y: -0.56}
+      - {x: 0.14, y: -0.69}
+      - {x: 0.38, y: -0.69}
+      - {x: 0.59999996, y: -0.57}
+      - {x: 0.71, y: -0.35999998}
+      - {x: 0.84, y: -0.25}
+    - - {x: -0.22, y: -0.42}
+      - {x: -0.22, y: -0.39999998}
+      - {x: -0.22999999, y: -0.39}
+      - {x: -0.22999999, y: -0.22999999}
+      - {x: -0.13, y: -0.21}
+      - {x: -0.13, y: -0.32999998}
+      - {x: -0.099999994, y: -0.37}
+      - {x: -0.07, y: -0.39999998}
+      - {x: -0.089999996, y: -0.41}
+      - {x: -0.22999999, y: -0.42}
+      - {x: -0.25, y: -0.44}
+      - {x: -0.24, y: -0.45}
