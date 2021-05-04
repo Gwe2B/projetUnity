@@ -14,7 +14,7 @@ public sealed class Translation : MonoBehaviour {
 
 #if UNITY_EDITOR
     private static bool d_OverrideLanguage = false;
-    private static SystemLanguage d_Language = SystemLanguage.English;
+    private static SystemLanguage d_Language = SystemLanguage.Japanese;
 #endif
 
     private static void CheckInstance() {

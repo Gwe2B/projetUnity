@@ -421,7 +421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c70628b3d550f47af23fcd0ac0084a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Key: pauseTitle
+  m_Key: PauseTitle
 --- !u!1 &3505343823742062957
 GameObject:
   m_ObjectHideFlags: 0
@@ -1362,7 +1362,7 @@ GameObject:
   - component: {fileID: 3505343824731705730}
   - component: {fileID: 3505343824731705742}
   m_Layer: 5
-  m_Name: GameUI
+  m_Name: GameOverlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
