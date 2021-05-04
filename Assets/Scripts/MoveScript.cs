@@ -9,6 +9,10 @@ public class MoveScript : MonoBehaviour {
     private Rigidbody2D rigidbodyComponent;
     private Vector2 movement;
 
+    private void Awake() {
+        rigidbodyComponent = GetComponent<Rigidbody2D>();
+    }
+
     void Update() {
         movement = new Vector2(
           speed.x * direction.x,
@@ -17,10 +21,6 @@ public class MoveScript : MonoBehaviour {
     }
 
     void FixedUpdate(){
-        if(rigidbodyComponent == null) {
-            rigidbodyComponent = GetComponent<Rigidbody2D>();
-        }
-
         rigidbodyComponent.velocity = movement;
     }
 }

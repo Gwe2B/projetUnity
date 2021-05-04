@@ -1,3 +1,10 @@
 [Main Menu]
 Start = Jouer
 ReportBug = Reporter un bug
+
+[Pause]
+Resume = Retour au Jeu
+BackMenu = Menu Principal
+PauseTitle = Pause
+GameOver = Game Over
+Retry = Réessayer

@@ -37,6 +37,14 @@ public class PlayerScript : MonoBehaviour
             rigidbodyComponent.velocity.y
         );
 
+        bool shoot = Input.GetButtonDown("Fire1");
+        shoot |= Input.GetButtonDown("Fire2");
+
+        if(shoot) {
+            WeaponScript weapon = GetComponent<WeaponScript>();
+            if(weapon != null) { weapon.Attack(false); }
+        }
+
         var dist = (transform.position - Camera.main.transform.position).z;
         var leftBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, dist)).x;
         var rightBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, dist)).x;
@@ -53,5 +61,28 @@ public class PlayerScript : MonoBehaviour
     void FixedUpdate()
     {
         rigidbodyComponent.velocity = movement;
+    }
+
+    void OnDestroy() {
+        transform.parent.gameObject.AddComponent<GameOverScript>();
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Zombie")
+        {
+            EnemyScript enemy = collision.gameObject.GetComponent<EnemyScript>();
+            HealthScript myHp = GetComponent<HealthScript>();
+
+            myHp.SetHp(myHp.GetHp() - enemy.damage);
+            if (myHp.hb != null) { myHp.hb.SetHealth(myHp.GetHp()); }
+            Destroy(enemy.gameObject);
+
+            if (myHp.GetHp() <= 0)
+            {
+                Destroy(gameObject);
+                FindObjectOfType<GameManager>().EndGame();
+            }
+        }
     }
 }

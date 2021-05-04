@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HealthScript : MonoBehaviour {
@@ -18,29 +16,36 @@ public class HealthScript : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision) {
         ShotScript shot = collision.gameObject.GetComponent<ShotScript>();
-        EnemyScript enemy = collision.gameObject.GetComponent<EnemyScript>();
+        //EnemyScript enemy = collision.gameObject.GetComponent<EnemyScript>();
 
         if(shot != null) {
-            if(shot.isEnemyShot != isEnemy) {
+            if(isEnemy) {
                 hp -= shot.damage;
-                hb.SetHealth(hp);
+                if (hb != null) { hb.SetHealth(hp); }
                 Destroy(shot.gameObject);
 
                 if(hp <= 0) {
                     Destroy(gameObject);
                 }
             }
-        } else if(enemy != null) {
+        }/* else if(enemy != null) {
             if (!isEnemy) {
                 hp -= enemy.damage;
-                hb.SetHealth(hp);
+                if (hb != null) { hb.SetHealth(hp); }
                 Destroy(enemy.gameObject);
 
-                if (hp <= 0)
-                {
+                if (hp <= 0) {
                     Destroy(gameObject);
+                    FindObjectOfType<GameManager>().EndGame();
                 }
             }
-        }
+        }*/
     }
+
+    public void SetHp(int newhp)
+    {
+        if (newhp < maxHp) { hp = newhp; }
+    }
+
+    public int GetHp() { return hp; }
 }
