@@ -545,7 +545,7 @@ GameObject:
   - component: {fileID: 891019831}
   - component: {fileID: 891019832}
   m_Layer: 0
-  m_Name: 4 - Foreground Elements
+  m_Name: 4 - Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
