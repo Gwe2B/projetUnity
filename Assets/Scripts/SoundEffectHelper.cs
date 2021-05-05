@@ -6,6 +6,9 @@ public class SoundEffectHelper : MonoBehaviour
     public static SoundEffectHelper Instance;
 
     public AudioClip playerShotSound;
+    public AudioClip zombiSound;
+    public AudioClip motoSound;
+    public AudioClip menuSound;
 
     void Awake()
     {
@@ -20,6 +23,18 @@ public class SoundEffectHelper : MonoBehaviour
     public void MakePlayerShotSound()
     {
         MakeSound(playerShotSound);
+    }
+    public void MakeZombiSound()
+    {
+        MakeSound(zombiSound);
+    }
+    public void MakeMotoSound()
+    {
+        MakeSound(motoSound);
+    }
+    public void MakeMenuSound()
+    {
+        MakeSound(menuSound);
     }
 
     private void MakeSound(AudioClip originalClip)
