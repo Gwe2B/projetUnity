@@ -24,6 +24,8 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         float inputX = Input.GetAxis("Horizontal");
+        bool shoot  = Input.GetButtonDown("Fire1");
+             shoot |= Input.GetButtonDown("Fire2");
 
         if (Input.GetButtonDown("Jump") && rigidbodyComponent.velocity.y == 0)
         { rigidbodyComponent.velocity = Vector2.up * jumpVelocity; }
@@ -37,33 +39,32 @@ public class PlayerScript : MonoBehaviour
             rigidbodyComponent.velocity.y
         );
 
-        bool shoot = Input.GetButtonDown("Fire1");
-        shoot |= Input.GetButtonDown("Fire2");
-
-        if(shoot) {
+        if (shoot)
+        {
             WeaponScript weapon = GetComponent<WeaponScript>();
-            if(weapon != null) {
+            if (weapon != null)
+            {
                 weapon.Attack(false);
                 SoundEffectHelper.Instance.MakePlayerShotSound();
             }
         }
+    }
 
+    void FixedUpdate()
+    {
         var dist = (transform.position - Camera.main.transform.position).z;
         var leftBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, dist)).x;
         var rightBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, dist)).x;
         var topBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, dist)).y;
         var bottomBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, dist)).y;
+        
+        rigidbodyComponent.velocity = movement;
 
         transform.position = new Vector3(
             Mathf.Clamp(transform.position.x, leftBorder, rightBorder),
             Mathf.Clamp(transform.position.y, topBorder, bottomBorder),
             transform.position.z
         );
-    }
-
-    void FixedUpdate()
-    {
-        rigidbodyComponent.velocity = movement;
     }
 
     void OnDestroy() {
