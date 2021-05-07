@@ -7,9 +7,16 @@ public class GameManager : MonoBehaviour
     public GameObject pauseMenuUi;
     public GameObject gameoverUI;
 
-    public void EndGame()
+    public void EndGame(bool win = false)
     {
-        gameoverUI.SetActive(true);
+        if (win)
+        {
+            Debug.Log("WIN");
+        }
+        else
+        {
+            gameoverUI.SetActive(true);
+        }
         Time.timeScale = 0f;
     }
 
