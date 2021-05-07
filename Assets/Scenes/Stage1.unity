@@ -950,9 +950,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerShotSound: {fileID: 8300000, guid: 426321678f4939242b91971f3baf6a99, type: 3}
-  zombiSound: {fileID: 0}
-  motoSound: {fileID: 0}
-  menuSound: {fileID: 0}
+  zombiSound: {fileID: 8300000, guid: e019ed11fec30c248a09f50c71fc1cbf, type: 3}
+  motoSound: {fileID: 8300000, guid: 455228c32ef97da40b7c4860717a9a47, type: 3}
+  menuSound: {fileID: 8300000, guid: 455228c32ef97da40b7c4860717a9a47, type: 3}
 --- !u!1 &1121601992
 GameObject:
   m_ObjectHideFlags: 0
