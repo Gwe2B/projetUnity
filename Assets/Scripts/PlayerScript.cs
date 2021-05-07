@@ -102,5 +102,9 @@ public class PlayerScript : MonoBehaviour
             if (myHp.hb != null) { myHp.hb.SetHealth(myHp.GetHp()); }
             Destroy(bonus.gameObject);
         }
+        else if (collision.gameObject.tag == "Finish")
+        {
+            FindObjectOfType<GameManager>().EndGame(true);
+        }
     }
 }
