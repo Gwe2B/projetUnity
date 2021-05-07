@@ -7,11 +7,17 @@ public class GameManager : MonoBehaviour
     public GameObject pauseMenuUi;
     public GameObject gameoverUI;
 
+    public GameObject winEl;
+    public Animation buf;
+
+    public void temp() { EndGame(true); }
+
     public void EndGame(bool win = false)
     {
         if (win)
         {
             Debug.Log("WIN");
+            buf.Play();
         }
         else
         {
