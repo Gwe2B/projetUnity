@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,22 +11,12 @@ public sealed class Translation : MonoBehaviour {
     private static Dictionary<string, string> trad = null;
     private static SystemLanguage lang;
 
-#if UNITY_EDITOR
-    private static bool d_OverrideLanguage = false;
-    private static SystemLanguage d_Language = SystemLanguage.Japanese;
-#endif
-
     private static void CheckInstance() {
-        // Already Initialized ?
         if(trad != null) { return; }
 
         trad = new Dictionary<string, string>();
         var langBuf = Application.systemLanguage;
 
-#if UNITY_EDITOR
-        // Override the current language for testing purpose.
-        if (d_OverrideLanguage) { langBuf = d_Language; }
-#endif
         // Check if the current language is supported.
         // Otherwise use the first language as default.
         if (Array.IndexOf<SystemLanguage>(LANGUAGES, langBuf) == -1)
@@ -38,7 +27,6 @@ public sealed class Translation : MonoBehaviour {
         if (data != null) { ParseFile(data.text); }
     }
 
-    // Returns the translation for this key.
     public static string Get(string key)
     {
         CheckInstance();
@@ -51,7 +39,7 @@ public sealed class Translation : MonoBehaviour {
         return key;
     }
 
-    public static void ParseFile(string data)
+    private static void ParseFile(string data)
     {
         using (var stream = new StringReader(data)) {
             var line = stream.ReadLine();
@@ -79,8 +67,6 @@ public sealed class Translation : MonoBehaviour {
             }
         }
     }
-
-    //public static void setLanguage() {}
 
     public static SystemLanguage GetLanguage() { return lang; }
 }
